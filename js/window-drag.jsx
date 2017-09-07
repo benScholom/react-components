@@ -11,7 +11,19 @@
  */
 
 const React = require("react");
-
+/**
+ * @description Detect drags into and out of the page
+ * @example 
+ * var Indicator = React.createClass({
+ *  render: function() {
+ *      return <WindowDrag>
+ *        
+ *   <div>WINDOW DRAG!</div>
+ *  </WindowDrag>;
+ * }
+ * });
+ * return <Indicator />; 
+ */
 const WindowDrag = React.createClass({
     propTypes: {
         children: React.PropTypes.node,

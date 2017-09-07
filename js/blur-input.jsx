@@ -12,11 +12,52 @@ const React = require("react");
  * Enough melodrama. Its an input that only sends changes
  * to its parent on blur.
  */
+/**
+ * @description An input component that notifies its parent of changes when it loses focus.
+ * @example
+ * // {{{ TODO(joel) - numericalParse
+ * var URLInput = React.createClass({
+ *     render: function() {
+ *         // {{{
+ *         var imgStyle = {
+ *             paddingTop: 15,
+ *             display: 'block',
+ *             margin: 'auto',
+ *             maxWidth: '100%'
+ *         };
+ *         // }}}
+ *         return <div>
+ *             Image URL: <BlurInput value={this.state.url}
+ *                        onChange={this.handleChange} />
+ *             <img style={imgStyle} src={this.state.url} />
+ *         </div>;
+ *     },
+ *     handleChange: function(url) {
+ *         this.setState({ url });
+ *     },
+ *     getInitialState: function() {
+ *         return { url: this.props.initialUrl };
+ *     }
+ * });
+ * return <URLInput initialUrl={"https://www.kastatic.org/images/khan-logo-vertical-transparent.png"} />;
+ */
 const BlurInput = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.string} className
+         */
         className: React.PropTypes.string,
+        /**
+         * @property {PropTypes.any} style
+         */
         style: React.PropTypes.any,
+        /**
+         * @property {PropTypes.string} value
+         */
         value: React.PropTypes.string.isRequired,
+        /**
+         * @property {PropTypes.func} onChange
+         */
         onChange: React.PropTypes.func.isRequired,
     },
     getInitialState: function() {

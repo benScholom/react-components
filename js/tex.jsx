@@ -75,12 +75,29 @@ const srOnly = {
     position: "absolute",
     width: "1px",
 };
-
+/**
+ * @description Easily render LaTeX using [MathJax](http://www.mathjax.org/) or Khan Academy's fast [KaTeX](https://github.com/Khan/KaTeX)library.
+ * @example
+ * // return <TeX>{"\\nabla \\times \\vec{\\mathbf{B}} -\\, \\frac1c\\, \\frac{\\partial\\vec{\\mathbf{E}}}{\\partial t} = \\frac{4\\pi}{c}\\vec{\\mathbf{j}}"}</TeX>
+ * return <TeX>\nabla \cdot E = 4 \pi \rho</TeX>;
+ */
 const TeX = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.node} children
+         */
         children: React.PropTypes.node,
+        /**
+         * @property {PropTypes.func} onClick
+         */
         onClick: React.PropTypes.func,
+        /**
+         * @property {PropTypes.func} onRender
+         */
         onRender: React.PropTypes.func,
+        /**
+         * @property {PropTypes.any} style
+         */
         style: React.PropTypes.any,
     },
 

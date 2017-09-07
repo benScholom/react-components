@@ -88,9 +88,21 @@ const questionMark = 'data:image/png;base64,' +
     'fU9KqfEU78UbD9PdbJRlOdae55GmhIP+1NV1TcMwkOM41DSNHvRtMhTHMRVFQW3b6mOL' +
     'gx99kue5GRp/gIOZuZGvNpTNwjD8oliANU+qqqKu6/TQBdymN57AHjzBT+B6Jx79BRgA' +
     'vc49kQA4yxgAAAAASUVORK5CYII=';
-
+/**
+ * @description A very simple informational tooltip that displays on hover.
+ * @example
+ * return <div>
+ *     reticulating splines
+ *     <InfoTip><p>
+ *         <a href="http://sims.wikia.com/wiki/Reticulating_splines">meaningless phrase</a>
+ *     </p></InfoTip>
+ * </div>;
+ */
 const InfoTip = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.node} children
+         */
         children: React.PropTypes.node,
     },
 

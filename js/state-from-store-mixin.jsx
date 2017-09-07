@@ -40,7 +40,21 @@
  */
 
 //TODO(zach): unit test me
-
+/**
+ * @description Wires change listeners to get updates from a flux store.
+ * @example
+ * mixins = [StateFromStore({
+ *     userMission: {
+ *         store: UserMissionStore,
+ *         getFetchParams: function(props) {
+ *             return {missionSlug: props.missionSlug};
+ *         },
+ *         fetch: function(store, fetchParams) {
+ *             store.getBySlug(fetchParams.missionSlug);
+ *         }
+ *     }
+ * })];
+ */
 const StateFromStore = function(stateDescriptors) {
     const storageKey = "StateFromStoreMixin" + (new Date).getTime();
     let isMounted = false;

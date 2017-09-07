@@ -15,11 +15,45 @@
 const React = require("react");
 const SetIntervalMixin = require("./set-interval-mixin.jsx");
 const moment = require("moment");
-
-// TODO(joel) i18n
+/**
+ * @description Human friendly display of how long it's been since an event happened.
+ * @example
+ * // {{{
+ * var FormatCommentBody = React.createClass({
+ * 	render: function() {
+ * 		return <div>
+ * 			{this.props.body}
+ * 		</div>;
+ * 	}
+ * });
+ * var UserBadge = React.createClass({
+ * 	render: function() {
+ * 		return <div>@{this.props.user}</div>;
+ * 	}
+ * });
+ * // }}}
+ * var Comment = React.createClass({
+ *     render: function() {
+ *         return <div>
+ *             <FormatCommentBody body={this.props.body} />
+ *             <div>
+ *                 <UserBadge user={this.props.user} /> -
+ *                 <TimeAgo time={this.props.date} />
+ *             </div>
+ *         </div>;
+ *     }
+ * });
+ * return <Comment body="such time" user="dinojoel" date={new Date()} />;
+ */
 const TimeAgo = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.number} refreshMills - how often to update, in milliseconds
+         */
         refreshMillis: React.PropTypes.number,
+        /**
+         * @property {PropTypes.any} time -an ISO 8601 timestamp
+         */
         time: React.PropTypes.any.isRequired,
     },
     mixins: [SetIntervalMixin],

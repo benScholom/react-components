@@ -25,6 +25,31 @@
  *
  * This binds *and* unbinds the events.
  */
+/**
+ * @description Update this view every time a backbone model updates: This mixin is deprecated. We do not recommend using it in production.
+ * @example
+ * var SimpleModel = Backbone.Model.extend({
+ *     defaults: {
+ *         comment: "This is a comment!"
+ *     }
+ * });
+ * var Comment = React.createClass({
+ *     mixins: [BackboneMixin],
+ *     getBackboneModels: function() {
+ *         return [this.props.model];
+ *     },
+ *     render: function() {
+ *         return <div>{this.props.model.get("comment")}</div>;
+ *     }
+ * });
+ * var myModel = new SimpleModel();
+ * return <div>
+ *     <Comment model={myModel} />
+ *     <button onClick={function() {myModel.set("comment", "This is an (edited) comment!");}}>
+ *         Edit
+ *     </button>
+ * </div>; 
+ */
 const BackboneMixin = {
     componentDidMount: function() {
         this._backboneModels = this.getBackboneModels();

@@ -79,6 +79,27 @@ const interpolateStringToFragment = function(str, options) {
  * Note: this is not a full react component to avoid complex handling of other
  * things added to props, such as this.props.ref and this.props.children
  */
+
+/**
+ * @description A pseudo-component useful for internationalization.
+ * A simple i18n react component-like function to allow for string
+ * interpolation destined for the output of a react render() function
+ * This function understands react components, or other things renderable by
+ * react, passed in as props.
+ * @example
+ * var translated = <$_ first="Motoko" last="Kusanagi">
+ *     Hello, %(first)s %(last)s!
+ * </$_>;
+ * var link = <a href="javascript:void 0;" onClick={this._markTooHard}>
+ *     <$_>Click here</$_>
+ * </a>;
+ * return <span>
+ *     <$_ clickHere={link}>
+ *         We noticed you had a little trouble with this task.
+ *         %(clickHere)s to hide it until later.
+ *     </$_>
+ * </span>;
+ */
 const $_ = function(options, str) {
     if (arguments.length !== 2 || typeof str !== "string") {
         return "<$_> must have exactly one child, which must be a string";

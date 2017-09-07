@@ -8,11 +8,9 @@
  *          <div className="modal-header">
  *              <h2>{header}</h2>
  *          </div>
-
  *          <div className="modal-body">
  *              {body}
  *          </div>
-
  *          <div className="modal-footer">
  *              {footer}
  *          </div>
@@ -50,17 +48,71 @@ const styles = StyleSheet.create({
     },
 });
 
+/**
+ * @description This works like a simplified, React-native version of [Bootstrap's modal](http://getbootstrap.com/javascript/#modals).
+ * @example 
+ * var ButtonWithDialog = React.createClass({
+ * mixins: [LayeredComponentMixin],
+ * render: function() {
+ *         return <button onClick={this.handleClick}>
+ *             Click Me!
+ *         </button>;
+ *     },
+ *     renderLayer: function() {
+ *         if (this.state.clicked) {
+ *             return <Modal onClose={this.handleClose}>
+ *                 <div className="modal-header">
+ *                     Header
+ *                     <a href="javascript: void 0;"
+ *                        style={{float: "right", textDecoration: "none"}}
+ *                        onClick={this.handleClose}>
+ *                         &#215;
+ *                     </a>
+ *                 </div>
+ *                 <div className="modal-body">Body!</div>
+ *             </Modal>;
+ *         } else {
+ *             return <div />;
+ *         }
+ *     },
+ *     // {{{
+ *     handleClose: function() {
+ *         this.setState({ clicked: false });
+ *     },
+ *     handleClick: function() {
+ *         this.setState({ clicked: !this.state.clicked });
+ *     },
+ *     getInitialState: function() {
+ *         return { clicked: false };
+ *     }
+ *     // }}}
+ * });
+ * 
+ * return <ButtonWithDialog />;
+ * 
+ */
 const Modal = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.node} children
+         */
         children: React.PropTypes.node,
-
+        /** 
+         * @property {PropTypes.string} className
+         */
         className: React.PropTypes.string,
-
+        /**
+         * @property {PropTypes.bool} keyboard
+         */
         // Close the modal when esc is pressed? Defaults to true.
         keyboard: React.PropTypes.bool,
-
-        onClose: React.PropTypes.func,
-
+        /**
+         * @property {PropTypes.func} onClose
+         */
+        onClose: React.PropTypes.func,  
+        /**
+         * @property {PropTypes.bool|PropTypes.string} backdrop
+         */
         // TODO(joel) reimplement
         // Bootstrap modal's backdrop argument: Includes a modal-backdrop
         // element. Alternatively, specify static for a backdrop which doesn't

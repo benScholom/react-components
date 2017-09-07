@@ -2,14 +2,57 @@ const React = require('react');
 const ReactDOM = require("react-dom");
 
 const PT = React.PropTypes;
-
+/**
+ * @description Sort a list.
+ * @example
+ * var Sorter = React.createClass({
+ *     render: function() {
+ *         return <Sortable components={this.state.components}
+ *                          onReorder={this.handleReorder}
+ *                          className="sidebar-list"
+ *                          verify={() => true} />;
+ *     },
+ *     // {{{
+ *     handleReorder: function(components) {
+ *         this.setState({ components });
+ *     },
+ *     getInitialState: function() {
+ *         return { components: this.props.components };
+ *     }
+ *     // }}}
+ * });
+ * // {{{
+ * var components = [
+ *     <div draggable={true} key="1">1</div>,
+ *     <div draggable={true} key="2">2</div>,
+ *     <div draggable={true} key="3">3</div>,
+ *     <div draggable={true} key="4">4</div>
+ * ];
+ * return <Sorter components={components} />;
+ * // }}}
+ */
 // Takes an array of components to sort
 const SortableArea = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.string} className
+         */
         className: PT.string,
+        /**
+         * @property {PropTypes.node[]} components
+         */
         components: PT.arrayOf(PT.node).isRequired,
+        /**
+         * @property {PropTypes.func} onReorder
+         */
         onReorder: PT.func.isRequired,
+        /**
+         * @property {PropTypes.any} style
+         */
         style: PT.any,
+        /**
+         * @property {PropTypes.func} verify
+         */
         verify: PT.func,
     },
     getDefaultProps: function() {

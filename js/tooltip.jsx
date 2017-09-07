@@ -45,6 +45,7 @@ const ReactDOM = require("react-dom");
 
 const zIndex = 10;
 
+
 const Triangle = React.createClass({
     propTypes: {
         color: React.PropTypes.string.isRequired,
@@ -202,25 +203,74 @@ const HORIZONTAL_ALIGNMNENTS = {
     },
 };
 
-
+/**
+ * @description A generic tooltip library for React.js
+ * @example
+ * // {{{
+ * var pStyle = {
+ *     margin: 0,
+ *     padding: 10,
+ *     backgroundColor: "white"
+ * };
+ * // }}}
+ * return <Tooltip className="class-for-tooltip-contents"
+ *                 horizontalPosition="left"
+ *                 horizontalAlign="left"
+ *                 verticalPosition="bottom"
+ *                 arrowSize={10}
+ *                 borderColor="#ccc"
+ *                 show>
+ *     <div>reticulating splines!</div>
+ *     <p style={pStyle}>
+ *         <a href="http://sims.wikia.com/wiki/Reticulating_splines">meaningless phrase</a>
+ *     </p>
+ * </Tooltip>;
+ */
 const Tooltip = React.createClass({
     propTypes: {
+        /**
+         * @property {PropTypes.bool} show
+         */
         show: React.PropTypes.bool.isRequired,
+        /**
+         * @property {PropTypes.string} className
+         */
         className: React.PropTypes.string,
+        /**
+         *  @property {PropTypes.number} arrowSize
+         */
         arrowSize: React.PropTypes.number,
+        /**
+         * @property {PropTypes.string} borderColor
+         */
         borderColor: React.PropTypes.string,
+        /**
+         * @property {PropTypes.string} verticalPosition
+         */
         verticalPosition: React.PropTypes.oneOf(
             Object.keys(VERTICAL_CORNERS)
         ),
+        /**
+         * @property {PropTypes.string} horizontalPosition
+         */
         horizontalPosition: React.PropTypes.oneOf(
             Object.keys(HORIZONTAL_CORNERS)
         ),
+        /**
+         * @property {PropTypes.string} horizontalAlign
+         */
         horizontalAlign: React.PropTypes.oneOf(
             Object.keys(HORIZONTAL_ALIGNMNENTS)
         ),
+        /**
+         * @property {PropTypes.element[]} children
+         */
         children: React.PropTypes.arrayOf(
             React.PropTypes.element
         ).isRequired,
+        /**
+         * @property {PropTypes.any} targetContainerStyle
+         */
         targetContainerStyle: React.PropTypes.any,  // style object
     },
 
