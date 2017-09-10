@@ -1,4 +1,4 @@
-/**
+/*
  * A generic tooltip library for React.js
  *
  * This should eventually end up in react-components

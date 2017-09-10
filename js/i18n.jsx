@@ -1,4 +1,4 @@
-/**
+/*
  * Performs sprintf-like %(name)s replacement on str, and returns a React
  * fragment of the string interleaved with those replacements. The replacements
  * can be any valid React node including strings and numbers.
@@ -53,12 +53,12 @@ const interpolateStringToFragment = function(str, options) {
 };
 
 /**
- * A simple i18n react component-like function to allow for string
+ * @description A simple i18n react component-like function to allow for string
  * interpolation destined for the output of a react render() function
  *
  * This function understands react components, or other things renderable by
  * react, passed in as props.
- *
+ * @example
  * Examples:
  *   <$_ first="Motoko" last="Kusanagi">
  *       Hello, %(first)s %(last)s!
@@ -78,27 +78,6 @@ const interpolateStringToFragment = function(str, options) {
  *
  * Note: this is not a full react component to avoid complex handling of other
  * things added to props, such as this.props.ref and this.props.children
- */
-
-/**
- * @description A pseudo-component useful for internationalization.
- * A simple i18n react component-like function to allow for string
- * interpolation destined for the output of a react render() function
- * This function understands react components, or other things renderable by
- * react, passed in as props.
- * @example
- * var translated = <$_ first="Motoko" last="Kusanagi">
- *     Hello, %(first)s %(last)s!
- * </$_>;
- * var link = <a href="javascript:void 0;" onClick={this._markTooHard}>
- *     <$_>Click here</$_>
- * </a>;
- * return <span>
- *     <$_ clickHere={link}>
- *         We noticed you had a little trouble with this task.
- *         %(clickHere)s to hide it until later.
- *     </$_>
- * </span>;
  */
 const $_ = function(options, str) {
     if (arguments.length !== 2 || typeof str !== "string") {

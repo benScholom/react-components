@@ -1,5 +1,5 @@
 /**
- * A React mixin factory which syncs state with a flux-style datastore. In
+ * @description A React mixin factory which syncs state with a flux-style datastore. In
  * order to be compatible with this mixin, the datastore must support the
  * addition and removal of change event handlers via `addChangeListener` and
  * `removeChangeListener` respectively.
@@ -21,8 +21,7 @@
  * fetch: a function which takes the datastore and fetchParams (returned from
  * the corresponding getFetchParams function), and which returns the new state
  * value.
- *
- *
+ * @example
  * Example for a component which sets its state.userMission from a
  * UserMissionStore:
  *
@@ -40,21 +39,7 @@
  */
 
 //TODO(zach): unit test me
-/**
- * @description Wires change listeners to get updates from a flux store.
- * @example
- * mixins = [StateFromStore({
- *     userMission: {
- *         store: UserMissionStore,
- *         getFetchParams: function(props) {
- *             return {missionSlug: props.missionSlug};
- *         },
- *         fetch: function(store, fetchParams) {
- *             store.getBySlug(fetchParams.missionSlug);
- *         }
- *     }
- * })];
- */
+
 const StateFromStore = function(stateDescriptors) {
     const storageKey = "StateFromStoreMixin" + (new Date).getTime();
     let isMounted = false;

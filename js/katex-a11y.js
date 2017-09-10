@@ -1,12 +1,13 @@
 /**
  * KaTeX A11y
- * A library for converting KaTeX math into readable strings.
+ * @description A library for converting KaTeX math into readable strings.
  */
 
 // NOTE(jeresig): We need to keep this file as pure ES5 to avoid import
 // problems into webapp.
 /* eslint-disable no-var */
 /* global katex */
+const katex = require('katex');
 
 var stringMap = {
     "(": "left parenthesis",
@@ -398,6 +399,7 @@ var buildA11yStrings = function(tree, a11yStrings) {
     // Everything else is assumed to be an object...
     } else {
         if (!tree.type || !(tree.type in typeHandlers)) {
+            console.log(tree);
             throw new Error("KaTeX a11y un-recognized type: " + tree.type);
         } else {
             typeHandlers[tree.type](tree, a11yStrings);
@@ -477,7 +479,7 @@ var flatten = function(array) {
 };
 
 var renderString = function(text) {
-    var tree = parseMath(text);
+    var tree = parseMath(text)
     var a11yStrings = buildA11yStrings(tree);
     return flatten(a11yStrings).join(", ");
 };

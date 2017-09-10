@@ -1,4 +1,4 @@
-/**
+/*
  * The CSSTransitionGroup component uses the 'transitionend' event, which
  * browsers will not send for any number of reasons, including the
  * transitioning node not being painted or in an unfocused tab.
@@ -20,7 +20,7 @@ const ReactTransitionGroup = require('react-addons-transition-group');
 
 const TICK = 17;
 
-/**
+/*
  * EVENT_NAME_MAP is used to determine which event fired when a
  * transition/animation ends, based on the style property used to
  * define that event.
@@ -84,7 +84,7 @@ function animationSupported() {
     return endEvents.length !== 0;
 }
 
-/**
+/*
  * Functions for element class management to replace dependency on jQuery
  * addClass, removeClass and hasClass
  */

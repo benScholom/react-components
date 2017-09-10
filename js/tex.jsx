@@ -1,5 +1,5 @@
 "use strict";
-/**
+/*
  * For math rendered using KaTex and/or MathJax. Use me like <TeX>2x + 3</TeX>.
  */
 /* global katex, MathJax, Khan */
@@ -10,6 +10,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 const katexA11y = require('./katex-a11y.js');
+
+const katex = require('katex');
 
 let pendingScripts = [];
 let pendingCallbacks = [];

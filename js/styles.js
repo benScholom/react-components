@@ -1,3 +1,6 @@
+/**
+ * @description styling for buttons
+ */
 const StyleSheet = require("aphrodite").StyleSheet;
 
 const button = StyleSheet.create({
