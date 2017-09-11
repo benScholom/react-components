@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
 });
 
 /**
- * @description This works like a simplified, React-native version of [Bootstrap's modal](http://getbootstrap.com/javascript/#modals).
+ * @description This works like a simplified, React-native version of Bootstrap's modal
+ * see also http://getbootstrap.com/javascript/#modals
  * @example 
  * var ButtonWithDialog = React.createClass({
  * mixins: [LayeredComponentMixin],

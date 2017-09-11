@@ -77,7 +77,9 @@ const srOnly = {
     width: "1px",
 };
 /**
- * @description Easily render LaTeX using [MathJax](http://www.mathjax.org/) or Khan Academy's fast [KaTeX](https://github.com/Khan/KaTeX)library.
+ * @description Easily render LaTeX using MathJax or Khan Academy's fast KaTeX library.
+ * Mathjax: http://www.mathjax.org/ 
+ * Katex:https://github.com/Khan/KaTeX 
  * @example
  * // return <TeX>{"\\nabla \\times \\vec{\\mathbf{B}} -\\, \\frac1c\\, \\frac{\\partial\\vec{\\mathbf{E}}}{\\partial t} = \\frac{4\\pi}{c}\\vec{\\mathbf{j}}"}</TeX>
  * return <TeX>\nabla \cdot E = 4 \pi \rho</TeX>;
