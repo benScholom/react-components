@@ -1,0 +1,11 @@
+{
+    "env": {
+        "compiler": "bit.envs/compilers/react@1",
+        "tester": "bit.envs/testers/mocha@2"
+    },
+    "dependencies": {},
+    "structure": "components/{namespace}/{name}",
+    "dist": {
+        "target": "dist"
+    }
+}
