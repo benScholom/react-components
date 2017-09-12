@@ -12,32 +12,6 @@
         "origin": "AUTHORED",
         "mainFile": "js/styles.js"
     },
-    "utils/katex-a11y": {
-        "files": [
-            {
-                "relativePath": "test/katex-a11y-math.txt",
-                "test": false,
-                "name": "katex-a11y-math.txt"
-            },
-            {
-                "relativePath": "test/katex-a11y-tex.json",
-                "test": false,
-                "name": "katex-a11y-tex.json"
-            },
-            {
-                "relativePath": "js/katex-a11y.js",
-                "test": false,
-                "name": "katex-a11y.js"
-            },
-            {
-                "relativePath": "test/katex-a11y-test.jsx",
-                "test": true,
-                "name": "katex-a11y-test.jsx"
-            }
-        ],
-        "origin": "AUTHORED",
-        "mainFile": "js/katex-a11y.js"
-    },
     "components/backbone-mixin": {
         "files": [
             {
@@ -259,5 +233,26 @@
         ],
         "origin": "AUTHORED",
         "mainFile": "js/window-drag.jsx"
+    },
+    "utils/katex-a11y": {
+        "files": [
+            {
+                "relativePath": "test/katex-a11y-tex.json",
+                "test": false,
+                "name": "katex-a11y-tex.json"
+            },
+            {
+                "relativePath": "js/katex-a11y.js",
+                "test": false,
+                "name": "katex-a11y.js"
+            },
+            {
+                "relativePath": "test/katex-a11y-test.jsx",
+                "test": true,
+                "name": "katex-a11y-test.jsx"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "js/katex-a11y.js"
     }
 }
